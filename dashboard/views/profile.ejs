@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <%- include('partials/header'); %>
+        <title>chaunBot | profile</title>
+
+</head>
+
+<body>
+    <%- include('partials/headbar'); %>
+
+
+        <center>
+            <h3> Serveur(s) configurable(s)</h3>
+
+            <% withBotGuilds.forEach(guild => {%>
+
+                <div class="server-block" title="<%= guild.name %>">
+                    <a href="/serveurs/<%= guild.id %>">
+                        <% if (guild.icon) { %>
+                            <img src="https://cdn.discordapp.com/icons/<%= guild.id %>/<%= guild.icon %>.png?size=2048" width="70px" height="70px" class="guild-icon" />
+                            <% } else { %>
+                                <canvas class="guild-icon" id="<%= guild.name.replace(/\w+/g, name => name[0]).replace(/\s/g, '') %>" width="70px" height="70px"></canvas>
+
+                                <script>
+                                    function createIcone() {
+                                        const nameAcronym = document.getElementById("<%= guild.name.replace(/\w+/g, name => name[0]).replace(/\s/g, '')  %>").getContext('2d');
+                                        nameAcronym.font = '10px Arial';
+                                        nameAcronym.textAlign = "center";
+                                        nameAcronym.fillStyle = "white";
+                                        nameAcronym.fillText("<%= guild.name.replace(/\w+/g, name => name[0]).replace(/\s/g, '')  %>", 25, 35);
+                                    };
+                                    createIcone();
+                                </script>
+                                <%}%>
+                    </a>
+                </div>
+
+                <% }) %>
+
+
+
+                    <h3> Ajoutez moi ici </h3>
+
+                    <% withoutBotGuilds.forEach(guild => {%>
+
+                        <div class="server-block" title="<%= guild.name %>">
+                            <a href="/serveurs/<%= guild.id %>">
+                                <% if (guild.icon) { %>
+                                    <img src="https://cdn.discordapp.com/icons/<%= guild.id %>/<%= guild.icon %>.png?size=2048" width="70px" height="70px" class="guild-icon" />
+                                    <% } else { %>
+                                        <canvas class="guild-icon" id="<%= guild.name.replace(/\w+/g, name => name[0]).replace(/\s/g, '') %>" width="70px" height="70px"></canvas>
+
+                                        <script>
+                                            function createIcone() {
+                                                const nameAcronym = document.getElementById("<%= guild.name.replace(/\w+/g, name => name[0]).replace(/\s/g, '')  %>").getContext('2d');
+                                                nameAcronym.font = '10px Arial';
+                                                nameAcronym.textAlign = "center";
+                                                nameAcronym.fillStyle = "white";
+                                                nameAcronym.fillText("<%= guild.name.replace(/\w+/g, name => name[0]).replace(/\s/g, '')  %>", 25, 35);
+                                            };
+                                            createIcone();
+                                        </script>
+                                        <%}%>
+                            </a>
+                        </div>
+                        <% }) %>
+                            <div>
+                            </div>
+        </center>
+
+
+
+        <%- include('partials/footer'); %>
+
+            <%- include('partials/scripts'); %>
+
+</body>
+
+</html>

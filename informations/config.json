@@ -1,0 +1,19 @@
+{
+    "debug": false,
+    "token": "process.env.TOKEN",
+    "owners": ["youridhere"],
+    "ytapikey": "",
+    "logWebhook": "awebhookfromaprivatechannelhere",
+    "panel_url": "http://localhost:1403",
+    "client_secret": "",
+    "panel_secret": "type a long random string and keep it private",
+    "port": 1403,
+    "db": {
+        "host": "sql11.freemysqlhosting.net",
+        "name": "sql11423345",
+        "username": "sql11423345",
+        "password": ""
+    }
+
+
+}
