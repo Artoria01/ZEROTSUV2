@@ -1,9 +1,9 @@
 {
     "debug": false,
     "token": "process.env.TOKEN",
-    "owners": ["youridhere"],
+    "owners": ["237101750610296832"],
     "ytapikey": "",
-    "logWebhook": "awebhookfromaprivatechannelhere",
+    "logWebhook": "https://discord.com/api/webhooks/861968193475051560/QfOmxiMpJZSget96oT3WFEc58b9fzouMmuxDpyR2QjQNB4f0mUpdSp_2WKfSHU6dXslg",
     "panel_url": "http://localhost:1403",
     "client_secret": "",
     "panel_secret": "type a long random string and keep it private",
