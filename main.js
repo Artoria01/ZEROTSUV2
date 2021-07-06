@@ -6,7 +6,7 @@ const recursive = require("recursive-readdir");
 
 const client = new Discord.Client();
 const configBOT = require("./informations/config");
-client.login(configBOT.token);
+client.login(process.env.TOKEN);
 
 
 const webhook = require('discord-webhook-node');
@@ -97,7 +97,7 @@ recursive('./commands/', (err, files) => {
 
 
 // on dit bonjour poliment à discord
-client.login(configBOT.token);
+client.login(process.env.TOKEN);
 
 
 client.on("error", (e) => {
